@@ -1,0 +1,15 @@
+Value TIMOS_VERSION (\S+)
+Value ARCHITECTURE (\S+)
+Value PRODUCT_NAME (.+?)
+Value COPYRIGHT (.+)
+Value LICENSE_STATEMENT (.+)
+Value BUILD_DATE_TIME (.+? \d{4})
+Value BUILD_BUILDER (\S+)
+Value BUILD_PATH (.+)
+
+Start
+  ^\s*A:admin@sr-2se-1-a# show version\s*$$
+  ^\s*${TIMOS_VERSION}\s*${ARCHITECTURE}\s*${PRODUCT_NAME}\s*${COPYRIGHT}\s*$$
+  ^\s*${LICENSE_STATEMENT}\s*$$
+  ^\s*Built on\s*${BUILD_DATE_TIME}\s*by\s*${BUILD_BUILDER}\s*in\s*${BUILD_PATH}\s*$$
+  
