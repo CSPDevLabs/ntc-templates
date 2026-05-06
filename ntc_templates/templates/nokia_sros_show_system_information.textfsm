@@ -58,7 +58,6 @@ Value SYSTEM_REBOOT_REQUIRED (\S+)
 Value LAST_REBOOT_REASON (\S+)
 
 Start
-  ^\s*A:admin@sr-2se-1-a# show system information\s*$$
   ^\s*={79}$$
   ^\s*System Information\s*$$
   ^\s*={79}$$
