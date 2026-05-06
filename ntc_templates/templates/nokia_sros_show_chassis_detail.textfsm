@@ -102,7 +102,6 @@ Value PM_HW_CURRENT_ALARM_STATE (.+)
 
 
 Start
-  ^\s*A:admin@sr-2se-1-a# show chassis detail\s*$$
   ^\s*={79}$$
   ^\s*System Information\s*$$
   ^\s*={79}$$
