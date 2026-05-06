@@ -1,0 +1,221 @@
+Value NAME (.+)
+Value TYPE (.+)
+Value CHASSIS_TOPOLOGY (.+)
+Value LOCATION (.+)
+Value COORDINATES (.+)
+Value CLLI_CODE (.+)
+Value NUMBER_OF_SLOTS (\d+)
+Value OPER_NUMBER_OF_SLOTS (\d+)
+Value NUM_FACEPLATE_PORTS (\d+)
+Value NUM_PHYSICAL_PORTS (\d+)
+Value CRITICAL_LED_STATE (.+)
+Value MAJOR_LED_STATE (.+)
+Value MINOR_LED_STATE (.+)
+Value OVER_TEMPERATURE_STATE (.+)
+Value BASE_MAC_ADDRESS (\S+)
+Value FP_GENERATIONS (\S+)
+Value SYSTEM_PROFILE (\S+)
+
+Value CHASSIS_STATUS (.+)
+Value CHASSIS_ROLE (.+)
+Value CHASSIS_HW_PART_NUMBER (.+)
+Value CHASSIS_HW_CLEI_CODE (.+)
+Value CHASSIS_HW_SERIAL_NUMBER (.+)
+Value CHASSIS_HW_MANUFACTURE_DATE (\S+)
+Value CHASSIS_HW_MANUFACTURING_DEVIATIONS (.+)
+Value CHASSIS_HW_MANUFACTURING_ASSEMBLY_NUMBER (\S+)
+Value CHASSIS_HW_TIME_LAST_BOOT (\S+\s+\S+)
+Value CHASSIS_HW_CURRENT_ALARM_STATE (.+)
+
+Value NUM_FAN_TRAYS (\d+)
+
+Value FAN_TRAY_NUMBER (\d+)
+Value FAN_SPEED (\d+\s*%)
+Value FAN_STATUS (.+)
+Value FAN_HW_PART_NUMBER (.+)
+Value FAN_HW_CLEI_CODE (.+)
+Value FAN_HW_SERIAL_NUMBER (\S+)
+Value FAN_HW_MANUFACTURE_DATE (\S+)
+Value FAN_HW_MANUFACTURING_DEVIATIONS (.+)
+Value FAN_HW_MANUFACTURING_ASSEMBLY_NUMBER (\S+)
+Value FAN_HW_ADMINISTRATIVE_STATE (.+)
+Value FAN_HW_OPERATIONAL_STATE (.+)
+Value FAN_HW_TIME_LAST_BOOT (\S+\s+\S+)
+Value FAN_HW_CURRENT_ALARM_STATE (.+)
+Value FAN_HW_POWER_ZONE (\d+)
+Value FAN_VOLTAGE_MINIMUM (\S+)
+Value FAN_VOLTAGE_MINIMUM_DATE_TIME (\S+\s+\S+)
+Value FAN_VOLTAGE_CURRENT (\S+)
+Value FAN_VOLTAGE_PEAK (\S+)
+Value FAN_VOLTAGE_PEAK_DATE_TIME (\S+\s+\S+)
+Value FAN_WATTAGE_MINIMUM (\S+)
+Value FAN_WATTAGE_MINIMUM_DATE_TIME (\S+\s+\S+)
+Value FAN_WATTAGE_CURRENT (\S+)
+Value FAN_WATTAGE_PEAK (\S+)
+Value FAN_WATTAGE_PEAK_DATE_TIME (\S+\s+\S+)
+Value FAN_WATTAGE_MAX_REQUIRED (\S+)
+Value FAN_AMPERAGE_MINIMUM (\S+)
+Value FAN_AMPERAGE_MINIMUM_DATE_TIME (\S+\s+\S+)
+Value FAN_AMPERAGE_CURRENT (\S+)
+Value FAN_AMPERAGE_PEAK (\S+)
+Value FAN_AMPERAGE_PEAK_DATE_TIME (\S+\s+\S+)
+
+Value POWER_MANAGEMENT_MODE (\S+)
+Value POWER_SAFETY_LEVEL (\S+)
+Value POWER_SAFETY_ALERT (\S+)
+Value NUMBER_OF_PMS (\d+)
+
+Value POWER_SHELF_NUMBER (\d+)
+Value PS_EQUIPPED_TYPE (\S+)
+Value PS_PROVISIONED_TYPE (.+)
+Value PS_POWER_ZONE (\d+)
+Value PS_INPUT_MODE (\S+)
+Value PS_OUTPUT (.+)
+Value PS_HW_PART_NUMBER (.+)
+Value PS_HW_CLEI_CODE (.+)
+Value PS_HW_SERIAL_NUMBER (\S+)
+Value PS_HW_MANUFACTURE_DATE (\S+)
+Value PS_HW_MANUFACTURING_DEVIATIONS (.+)
+Value PS_HW_MANUFACTURING_ASSEMBLY_NUMBER (\S+)
+Value PS_HW_ADMINISTRATIVE_STATE (.+)
+Value PS_HW_OPERATIONAL_STATE (.+)
+Value PS_HW_TIME_LAST_BOOT (\S+\s+\S+)
+Value PS_HW_CURRENT_ALARM_STATE (.+)
+
+Value PM_POWER_SHELF_NUMBER (\d+)
+Value PM_POWER_MODULE_NUMBER (\d+)
+Value PM_EQUIPPED_TYPE (\S+)
+Value PM_PROVISIONED_TYPE (.+)
+Value PM_POWER_ZONE (\d+)
+Value PM_OUTPUT_STATUS (.+)
+Value PM_INPUT_FEED_STATUS (.+)
+Value PM_HW_PART_NUMBER (.+)
+Value PM_HW_CLEI_CODE (.+)
+Value PM_HW_SERIAL_NUMBER (\S+)
+Value PM_HW_MANUFACTURE_DATE (\S+)
+Value PM_HW_MANUFACTURING_DEVIATIONS (.+)
+Value PM_HW_MANUFACTURING_ASSEMBLY_NUMBER (\S+)
+Value PM_HW_ADMINISTRATIVE_STATE (.+)
+Value PM_HW_OPERATIONAL_STATE (.+)
+Value PM_HW_TIME_LAST_BOOT (\S+\s+\S+)
+Value PM_HW_CURRENT_ALARM_STATE (.+)
+
+
+Start
+  ^\s*A:admin@sr-2se-1-a# show chassis detail\s*$$
+  ^\s*={79}$$
+  ^\s*System Information\s*$$
+  ^\s*={79}$$
+  ^\s*Name\s*:\s*${NAME}\s*$$
+  ^\s*Type\s*:\s*${TYPE}\s*$$
+  ^\s*Chassis Topology\s*:\s*${CHASSIS_TOPOLOGY}\s*$$
+  ^\s*Location\s*:\s*${LOCATION}\s*$$
+  ^\s*Coordinates\s*:\s*${COORDINATES}\s*$$
+  ^\s*CLLI code\s*:\s*${CLLI_CODE}\s*$$
+  ^\s*Number of slots\s*:\s*${NUMBER_OF_SLOTS}\s*$$
+  ^\s*Oper number of slots\s*:\s*${OPER_NUMBER_OF_SLOTS}\s*$$
+  ^\s*Num of faceplate ports/connectors\s*:\s*${NUM_FACEPLATE_PORTS}\s*$$
+  ^\s*Num of physical ports\s*:\s*${NUM_PHYSICAL_PORTS}\s*$$
+  ^\s*Critical LED state\s*:\s*${CRITICAL_LED_STATE}\s*$$
+  ^\s*Major LED state\s*:\s*${MAJOR_LED_STATE}\s*$$
+  ^\s*Minor LED state\s*:\s*${MINOR_LED_STATE}\s*$$
+  ^\s*Over Temperature state\s*:\s*${OVER_TEMPERATURE_STATE}\s*$$
+  ^\s*Base MAC address\s*:\s*${BASE_MAC_ADDRESS}\s*$$
+  ^\s*FP Generations\s*:\s*${FP_GENERATIONS}\s*$$
+  ^\s*System Profile\s*:\s*${SYSTEM_PROFILE}\s*$$
+  ^\s*={79}$$
+  ^\s*Chassis 1 Detail\s*$$
+  ^\s*={79}$$
+  ^\s*Chassis Status\s*:\s*${CHASSIS_STATUS}\s*$$
+  ^\s*Chassis Role\s*:\s*${CHASSIS_ROLE}\s*$$
+  ^\s*Hardware Data\s*$$
+  ^\s*Part number\s*:\s*${CHASSIS_HW_PART_NUMBER}\s*$$
+  ^\s*CLEI code\s*:\s*${CHASSIS_HW_CLEI_CODE}\s*$$
+  ^\s*Serial number\s*:\s*${CHASSIS_HW_SERIAL_NUMBER}\s*$$
+  ^\s*Manufacture date\s*:\s*${CHASSIS_HW_MANUFACTURE_DATE}\s*$$
+  ^\s*Manufacturing deviations\s*:\s*${CHASSIS_HW_MANUFACTURING_DEVIATIONS}\s*$$
+  ^\s*Manufacturing assembly number\s*:\s*${CHASSIS_HW_MANUFACTURING_ASSEMBLY_NUMBER}\s*$$
+  ^\s*Time of last boot\s*:\s*${CHASSIS_HW_TIME_LAST_BOOT}\s*$$
+  ^\s*Current alarm state\s*:\s*${CHASSIS_HW_CURRENT_ALARM_STATE}\s*$$
+  ^\s*-{79}$$
+  ^\s*Environment Information\s*$$
+  ^\s*Number of fan trays\s*:\s*${NUM_FAN_TRAYS}\s*$$
+
+ZeroOrMore
+  ^\s*Fan tray number\s*:\s*${FAN_TRAY_NUMBER}\s*$$
+  ^\s*Speed\s*:\s*${FAN_SPEED}\s*$$
+  ^\s*Status\s*:\s*${FAN_STATUS}\s*$$
+  ^\s*Hardware Data\s*$$
+  ^\s*Part number\s*:\s*${FAN_HW_PART_NUMBER}\s*$$
+  ^\s*CLEI code\s*:\s*${FAN_HW_CLEI_CODE}\s*$$
+  ^\s*Serial number\s*:\s*${FAN_HW_SERIAL_NUMBER}\s*$$
+  ^\s*Manufacture date\s*:\s*${FAN_HW_MANUFACTURE_DATE}\s*$$
+  ^\s*Manufacturing deviations\s*:\s*${FAN_HW_MANUFACTURING_DEVIATIONS}\s*$$
+  ^\s*Manufacturing assembly number\s*:\s*${FAN_HW_MANUFACTURING_ASSEMBLY_NUMBER}\s*$$
+  ^\s*Administrative state\s*:\s*${FAN_HW_ADMINISTRATIVE_STATE}\s*$$
+  ^\s*Operational state\s*:\s*${FAN_HW_OPERATIONAL_STATE}\s*$$
+  ^\s*Time of last boot\s*:\s*${FAN_HW_TIME_LAST_BOOT}\s*$$
+  ^\s*Current alarm state\s*:\s*${FAN_HW_CURRENT_ALARM_STATE}\s*$$
+  ^\s*Hardware Resources \(Power-Zone ${FAN_HW_POWER_ZONE}\)\s*$$
+  ^\s*Voltage\s*$$
+  ^\s*Minimum\s*:\s*${FAN_VOLTAGE_MINIMUM}\s*Volts\s*\(${FAN_VOLTAGE_MINIMUM_DATE_TIME}\)\s*$$
+  ^\s*Current\s*:\s*${FAN_VOLTAGE_CURRENT}\s*Volts\s*$$
+  ^\s*Peak\s*:\s*${FAN_VOLTAGE_PEAK}\s*Volts\s*\(${FAN_VOLTAGE_PEAK_DATE_TIME}\)\s*$$
+  ^\s*Wattage\s*$$
+  ^\s*Minimum\s*:\s*${FAN_WATTAGE_MINIMUM}\s*Watts\s*\(${FAN_WATTAGE_MINIMUM_DATE_TIME}\)\s*$$
+  ^\s*Current\s*:\s*${FAN_WATTAGE_CURRENT}\s*Watts\s*$$
+  ^\s*Peak\s*:\s*${FAN_WATTAGE_PEAK}\s*Watts\s*\(${FAN_WATTAGE_PEAK_DATE_TIME}\)\s*$$
+  ^\s*Max Required\s*:\s*${FAN_WATTAGE_MAX_REQUIRED}\s*Watts\s*$$
+  ^\s*Amperage\s*$$
+  ^\s*Minimum\s*:\s*${FAN_AMPERAGE_MINIMUM}\s*Amps\s*\(${FAN_AMPERAGE_MINIMUM_DATE_TIME}\)\s*$$
+  ^\s*Current\s*:\s*${FAN_AMPERAGE_CURRENT}\s*Amps\s*$$
+  ^\s*Peak\s*:\s*${FAN_AMPERAGE_PEAK}\s*Amps\s*\(${FAN_AMPERAGE_PEAK_DATE_TIME}\)\s*$$
+
+  ^\s*-{79}$$
+  ^\s*Power Management Information\s*$$
+  ^\s*Power Management Mode\s*:\s*${POWER_MANAGEMENT_MODE}\s*$$
+  ^\s*Power Safety Level\s*:\s*${POWER_SAFETY_LEVEL}\s*$$
+  ^\s*Power Safety Alert\s*:\s*${POWER_SAFETY_ALERT}\s*$$
+  ^\s*Number of PMs\s*:\s*${NUMBER_OF_PMS}\s*$$
+
+ZeroOrMore
+  ^\s*Power Shelf number\s*:\s*${POWER_SHELF_NUMBER}\s*$$
+  ^\s*PS Equipped Type\s*:\s*${PS_EQUIPPED_TYPE}\s*$$
+  ^\s*PS Provisioned Type\s*:\s*${PS_PROVISIONED_TYPE}\s*$$
+  ^\s*Power-Zone\s*:\s*${PS_POWER_ZONE}\s*$$
+  ^\s*Input Mode\s*:\s*${PS_INPUT_MODE}\s*$$
+  ^\s*Output\s*:\s*${PS_OUTPUT}\s*$$
+  ^\s*Hardware Data\s*$$
+  ^\s*Part number\s*:\s*${PS_HW_PART_NUMBER}\s*$$
+  ^\s*CLEI code\s*:\s*${PS_HW_CLEI_CODE}\s*$$
+  ^\s*Serial number\s*:\s*${PS_HW_SERIAL_NUMBER}\s*$$
+  ^\s*Manufacture date\s*:\s*${PS_HW_MANUFACTURE_DATE}\s*$$
+  ^\s*Manufacturing deviations\s*:\s*${PS_HW_MANUFACTURING_DEVIATIONS}\s*$$
+  ^\s*Manufacturing assembly number\s*:\s*${PS_HW_MANUFACTURING_ASSEMBLY_NUMBER}\s*$$
+  ^\s*Administrative state\s*:\s*${PS_HW_ADMINISTRATIVE_STATE}\s*$$
+  ^\s*Operational state\s*:\s*${PS_HW_OPERATIONAL_STATE}\s*$$
+  ^\s*Time of last boot\s*:\s*${PS_HW_TIME_LAST_BOOT}\s*$$
+  ^\s*Current alarm state\s*:\s*${PS_HW_CURRENT_ALARM_STATE}\s*$$
+
+ZeroOrMore
+  ^\s*Power Shelf number\s*:\s*${PM_POWER_SHELF_NUMBER}\s*$$
+  ^\s*Power Module number\s*:\s*${PM_POWER_MODULE_NUMBER}\s*$$
+  ^\s*PM Equipped Type\s*:\s*${PM_EQUIPPED_TYPE}\s*$$
+  ^\s*PM Provisioned Type\s*:\s*${PM_PROVISIONED_TYPE}\s*$$
+  ^\s*Power-Zone\s*:\s*${PM_POWER_ZONE}\s*$$
+  ^\s*Output Status\s*:\s*${PM_OUTPUT_STATUS}\s*$$
+  ^\s*Input Feed Status\s*:\s*${PM_INPUT_FEED_STATUS}\s*$$
+  ^\s*Hardware Data\s*$$
+  ^\s*Part number\s*:\s*${PM_HW_PART_NUMBER}\s*$$
+  ^\s*CLEI code\s*:\s*${PM_HW_CLEI_CODE}\s*$$
+  ^\s*Serial number\s*:\s*${PM_HW_SERIAL_NUMBER}\s*$$
+  ^\s*Manufacture date\s*:\s*${PM_HW_MANUFACTURE_DATE}\s*$$
+  ^\s*Manufacturing deviations\s*:\s*${PM_HW_MANUFACTURING_DEVIATIONS}\s*$$
+  ^\s*Manufacturing assembly number\s*:\s*${PM_HW_MANUFACTURING_ASSEMBLY_NUMBER}\s*$$
+  ^\s*Administrative state\s*:\s*${PM_HW_ADMINISTRATIVE_STATE}\s*$$
+  ^\s*Operational state\s*:\s*${PM_HW_OPERATIONAL_STATE}\s*$$
+  ^\s*Time of last boot\s*:\s*${PM_HW_TIME_LAST_BOOT}\s*$$
+  ^\s*Current alarm state\s*:\s*${PM_HW_CURRENT_ALARM_STATE}\s*$$
+  ^\s*={79}$$
+  ^\s*$$
+  
