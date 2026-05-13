@@ -52,7 +52,6 @@ Start
   ^\s*Base MAC address\s+:\s+${BASE_MAC_ADDRESS}
   ^\s*OS-Security Password\s+:\s+${OS_SECURITY_PASSWORD}
   ^\s*Anti-Theft Locked\s+:\s+${ANTI_THEFT_LOCKED}
-
   ^\s*={10,}\s*
   ^\s*Chassis\s+\d+\s+Detail -> Chassis
   ^\s*={10,}\s* -> Chassis
