@@ -35,9 +35,9 @@ Value POWER_SUPPLY_OUTPUT_POWER ([^\n]+)
 Value POWER_SUPPLY_OVER_TEMP ([^\n]+)
 
 Start
-  ^\s*={10,}\s*$
+  ^\s*={10,}\s*$$
   ^\s*System Information
-  ^\s*={10,}\s*$
+  ^\s*={10,}\s*$$
   ^\s*Name\s+:\s+${NAME}
   ^\s*Type\s+:\s+${TYPE}
   ^\s*Chassis Topology\s+:\s+${CHASSIS_TOPOLOGY}
@@ -53,9 +53,9 @@ Start
   ^\s*OS-Security Password\s+:\s+${OS_SECURITY_PASSWORD}
   ^\s*Anti-Theft Locked\s+:\s+${ANTI_THEFT_LOCKED}
 
-  ^\s*={10,}\s*$
+  ^\s*={10,}\s*$$
   ^\s*Chassis\s+\d+\s+Detail -> Chassis
-  ^\s*={10,}\s*$
+  ^\s*={10,}\s*$$ -> Chassis
 
 Chassis
   ^\s*Chassis Status\s+:\s+${CHASSIS_STATUS}
@@ -69,16 +69,16 @@ Chassis
   ^\s*Manufacturing assembly number\s+:\s+${CHASSIS_HW_MANUFACTURING_ASSEMBLY_NUMBER}
   ^\s*Time of last boot\s+:\s+${CHASSIS_HW_TIME_LAST_BOOT}
   ^\s*Current alarm state\s+:\s+${CHASSIS_HW_CURRENT_ALARM_STATE}
-  ^\s*-{10,}\s*$
-  ^\s*Environment Information -> Fans
+  ^\s*-{10,}\s*$$
+  ^\s*Environment Information -> Fans -> Fans
 
 Fans
   ^\s*Number of fan trays\s+:\s+${NUM_FAN_TRAYS}
   ^\s*Fan tray number\s+:\s+${FAN_TRAY_NUMBER}
   ^\s*Speed\s+:\s+${FAN_SPEED}
   ^\s*Status\s+:\s+${FAN_STATUS}
-  ^\s*-{10,}\s*$
-  ^\s*Power Supply Information -> Power
+  ^\s*-{10,}\s*$$
+  ^\s*Power Supply Information -> Power -> Power
 
 Power
   ^\s*Number of power supplies\s+:\s+${NUMBER_OF_POWER_SUPPLIES}
