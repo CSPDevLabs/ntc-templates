@@ -1,0 +1,9 @@
+Value Required INTERFACE (\S+)
+Value OPER_STATE (\S+)
+
+Start
+  ^    interface "${INTERFACE}" { -> OperState
+
+OperState
+  ^\s+oper-state ${OPER_STATE}
+  ^    } -> Start
