@@ -1,0 +1,9 @@
+Value Required CHASSIS_NUM (\d+)
+Value SERIAL_NUMBER (\S+)
+
+Start
+  ^    chassis router chassis-number ${CHASSIS_NUM} { -> HardwareData
+
+HardwareData
+  ^\s+serial-number "${SERIAL_NUMBER}"
+  ^    } -> Start
