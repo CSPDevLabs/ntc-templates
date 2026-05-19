@@ -902,8 +902,11 @@ mikrotik_routeros_ping.textfsm, .*, mikrotik_routeros, [[/]]pin[[g]]
 nokia_sros_show_version.textfsm, .*, nokia_sros, show version
 nokia_sros_show_system_information.textfsm, .*, nokia_sros, show system information
 nokia_sros_show_chassis_detail.textfsm, .*, nokia_sros, show chassis detail
-nokia_sros_show_router_interface.textfsm, .*, nokia_sros, info from running state router interface \* oper-state
-nokia_show_chassis_serial_data.textfsm, .*, nokia_sros, info from running state chassis router chassis-number \* hardware-data serial-number 
+nokia_info_from_router_interfaces.textfsm, .*, nokia_sros, info from running state router interface \* oper-state
+nokia_info_from_chassis_serial.textfsm, .*, nokia_sros, info from running state chassis router chassis-number \* hardware-data serial-number
+nokia_info_from_state_oper_name.textfsm, .*, nokia_sros, info from running state system oper-name 
+nokia_info_from_state_platform.textfsm, .*, nokia_sros, info from running state system platform
+nokia_info_from_state_management_interface.textfsm, .*, nokia_sros, info from running state router \"management\" interface \"management\" ipv4 primary
 
 oneaccess_oneos_show_voice_dial-peer_voice_voip_all.textfsm, .*, oneaccess_oneos, sh[[ow]] voice dial-peer voice voip all( al)?
 oneaccess_oneos_show_voice_voice-port_pri_all_histo.textfsm, .*, oneaccess_oneos, sh[[ow]] voice voice-port pri all histo
