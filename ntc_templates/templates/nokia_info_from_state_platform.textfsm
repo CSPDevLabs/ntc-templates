@@ -1,0 +1,4 @@
+Value DEVICE_TYPE (.+?)
+
+Start
+  ^\s+platform\s+"${DEVICE_TYPE}"\s*$$
