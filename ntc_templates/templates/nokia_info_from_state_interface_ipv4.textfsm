@@ -1,0 +1,10 @@
+Value Required ROUTER (\S+)
+Value Required INTERFACE (\S+)
+Value IP_ADDRESS (\S+)
+Value CREATION_ORIGIN (\S+)
+
+Start
+  ^\s*router\s+"${ROUTER}"\s*\{ -> Continue
+  ^\s*interface\s+"${INTERFACE}"\s*\{ -> Continue
+  ^\s*oper-address\s+${IP_ADDRESS}\s*$$ -> Continue
+  ^\s*creation-origin\s+${CREATION_ORIGIN}\s*$$ -> Record
