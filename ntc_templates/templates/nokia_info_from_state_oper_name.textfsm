@@ -1,0 +1,4 @@
+Value HOSTNAME (.+?)
+
+Start
+  ^\s+oper-name\s+"${HOSTNAME}"\s*$$
