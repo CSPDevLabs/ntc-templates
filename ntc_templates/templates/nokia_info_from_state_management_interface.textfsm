@@ -1,0 +1,6 @@
+Value OPER_ADDRESS (\S+)
+Value CREATION_ORIGIN (\S+)
+
+Start
+  ^\s+oper-address\s+${OPER_ADDRESS}\s*$$
+  ^\s+creation-origin\s+${CREATION_ORIGIN}\s*$$
