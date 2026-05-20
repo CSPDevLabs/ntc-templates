@@ -1,0 +1,6 @@
+Value Required PORT_ID (\S+)
+Value HARDWARE_TYPE (\S+)
+
+Start
+  ^\s*port\s+${PORT_ID}\s*\{ -> Continue
+  ^\s*type\s+${HARDWARE_TYPE}\s*$$ -> Record
