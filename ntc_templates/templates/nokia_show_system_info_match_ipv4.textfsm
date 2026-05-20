@@ -1,0 +1,4 @@
+Value MGMT_IP (\S+)
+
+Start
+  ^Management\s+IPv4\s+Addr\s+:\s+${MGMT_IP}\s*$$ -> Record
