@@ -1,1 +1,10 @@
+Value Required ROUTER (\S+)
+Value Required INTERFACE (\S+)
+Value PORT (\S+)
 
+Start
+  ^\s*router\s+"${ROUTER}"\s*\{ -> Continue
+  ^\s*interface\s+"${INTERFACE}"\s*\{ -> Continue
+  ^\s*port\s+${PORT}\s*$$ -> Record
+  # If an interface block ends without a port definition, record it empty
+  ^\s*\}\s*$$ -> Record
