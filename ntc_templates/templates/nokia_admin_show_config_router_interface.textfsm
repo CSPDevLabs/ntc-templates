@@ -1,0 +1,10 @@
+Value Required ROUTER (\S+)
+Value Required INTERFACE (\S+)
+Value IP_ADDRESS (\S+)
+Value PREFIX_LENGTH (\d+)
+
+Start
+  ^\s*router\s+"${ROUTER}"\s*\{ -> Continue
+  ^\s*interface\s+"${INTERFACE}"\s*\{ -> Continue
+  ^\s*address\s+${IP_ADDRESS}\s*$$ -> Continue
+  ^\s*prefix-length\s+${PREFIX_LENGTH}\s*$$ -> Record
