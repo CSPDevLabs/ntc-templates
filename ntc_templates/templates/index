@@ -904,6 +904,7 @@ nokia_info_from_state_oper_name.textfsm, .*, nokia_sros, info from running state
 nokia_info_from_state_platform.textfsm, .*, nokia_sros, info from running state system platform
 nokia_info_from_state_management_interface.textfsm, .*, nokia_sros, info from running state router \"management\" interface \"management\" ipv4 primary
 nokia_info_from_state_interface_ipv4.textfsm, .*, nokia_sros, info from running state router \* interface \* ipv4 primary
+nokia_admin_show_config_router_interface.textfsm, .*, nokia_sros, admin show configuration \/configure router \* interface \* ipv4 primary
 
 oneaccess_oneos_show_voice_dial-peer_voice_voip_all.textfsm, .*, oneaccess_oneos, sh[[ow]] voice dial-peer voice voip all( al)?
 oneaccess_oneos_show_voice_voice-port_pri_all_histo.textfsm, .*, oneaccess_oneos, sh[[ow]] voice voice-port pri all histo
